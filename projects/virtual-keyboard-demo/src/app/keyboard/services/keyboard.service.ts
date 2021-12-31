@@ -6,7 +6,7 @@ import {EMIT_DATA} from "../interfaces/keyboard";
   providedIn: 'root'
 })
 export class KeyboardService {
-  inputChange$ = new BehaviorSubject({});
+  inputChange$ = new Subject();
 
   constructor() { }
 

@@ -36,6 +36,8 @@ export class KeyboardDirective implements OnDestroy {
           this.closeVirtualKeyboard();
         }
       })
+    } else {
+      this.closeVirtualKeyboard();
     }
   }
 
@@ -43,6 +45,7 @@ export class KeyboardDirective implements OnDestroy {
     if (this.keyboardRef) {
       this.viewContainerRef.clear();
       this.keyboardRef = undefined;
+      this.inputSubscription?.unsubscribe();
     }
   }
 
