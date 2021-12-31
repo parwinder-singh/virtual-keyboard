@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.keyboard-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  position: fixed;
+  width: 900px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  background: #fafafa;
+  padding: 8px;
+  border-radius: 4px;
+
+  .row {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 8px 0;
+    column-gap: 8px;
+
+    .button {
+      position: relative;
+      box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+      background: white;
+      width: 34px;
+      height: 34px;
+      padding: 8px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column-reverse;
+      cursor: pointer;
+      gap: 4px;
+      font-family: system-ui;
+      flex: auto;
+
+      &:hover {
+        background: #f0f0f0;
+      }
+    }
+  }
+}
+
+.large-btn {
+  width: 80px;
+}
+.dot {
+  position: absolute;
+  right: 8px;
+  width: 4px;
+  height: 4px;
+  background: grey;
+  border-radius: 50px;
+}
+.dot-active {
+  background: lawngreen;
+}
+.wide-key {
+  width: 90px !important;
+}
+.dim {
+  opacity: 0.5;
+}
+.typed-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 4px 16px;
+  max-width: 95%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px 0px #80808040;
+  cursor: pointer;
+}

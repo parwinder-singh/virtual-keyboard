@@ -1,0 +1,38 @@
+<div class="keyboard-wrapper">
+  <div class="typed-text" *ngIf="inputValue">{{inputValue}}</div>
+  <div class="row" *ngFor="let row of keyboardLayout">
+    <div class="button" *ngFor="let data of row | keyvalue: originalOrder" (click)="handleKeyClick(data.value)"
+    [class.wide-key]="data.value?.isActionButton">
+      <ng-container *ngIf="!data.value?.isActionButton && !data.value?.isCharacterKey">
+        <span [class.dim]="shiftActive">{{data.value?.subKey}}</span>
+        <span [class.dim]="!shiftActive">{{data.value?.superKey}}</span>
+      </ng-container>
+      <ng-container *ngIf="!data.value?.isActionButton && data.value?.isCharacterKey">
+        <span>{{(capslockActive || shiftActive) ? data.value?.superKey : data.value?.subKey}}</span>
+      </ng-container>
+      <ng-container *ngIf="data.value?.isActionButton && data.value?.action == keyAction.BACKSPACE">
+        <span>{{data.value?.subKey}}</span>
+      </ng-container>
+      <ng-container *ngIf="data.value?.isActionButton && data.value?.action == keyAction.CAPS">
+        <span>{{data.value?.subKey}}</span>
+        <span class="dot" [class.dot-active]="capslockActive"></span>
+      </ng-container>
+      <ng-container *ngIf="data.value?.isActionButton && data.value?.action == keyAction.ENTER">
+        <span>{{data.value?.subKey}}</span>
+      </ng-container>
+      <ng-container *ngIf="data.value?.isActionButton && data.value?.action == keyAction.SHIFT">
+        <span>{{data.value?.subKey}}</span>
+        <span class="dot" [class.dot-active]="shiftActive"></span>
+      </ng-container>
+      <ng-container *ngIf="data.value?.isActionButton && data.value?.action == keyAction.SPACE_BAR">
+        <span>{{data.value?.subKey}}</span>
+      </ng-container>
+      <ng-container *ngIf="data.value?.isActionButton && data.value?.action == keyAction.CLEAR">
+        <span>{{data.value?.subKey}}</span>
+      </ng-container>
+      <ng-container *ngIf="data.value?.isActionButton && data.value?.action == keyAction.CLOSE">
+        <span>{{data.value?.subKey}}</span>
+      </ng-container>
+    </div>
+  </div>
+</div>
