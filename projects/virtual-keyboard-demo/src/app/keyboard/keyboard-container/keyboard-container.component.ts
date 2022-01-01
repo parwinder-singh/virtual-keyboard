@@ -23,6 +23,7 @@ export class KeyboardContainerComponent implements OnInit {
   shiftActive = false;
   inputValue = '';
   keyboardLayout = KEYBOARD;
+  isNumericField = false;
 
   constructor(private keyboardService: KeyboardService) {
   }
@@ -63,19 +64,26 @@ export class KeyboardContainerComponent implements OnInit {
         }
       }
     } else {
-      if (event.isCharacterKey) {
-        if ((this.shiftActive || this.capslockActive)) {
-          this.inputValue = this.inputValue.concat(event.superKey);
-        } else {
+      if (this.isNumericField) {
+        if ((event.subKey === '.' && !this.inputValue.includes('.')) || (!isNaN(event.subKey))) {
           this.inputValue = this.inputValue.concat(event.subKey);
         }
       } else {
-        if (this.shiftActive) {
-          this.inputValue = this.inputValue.concat(event.superKey);
+        if (event.isCharacterKey) {
+          if ((this.shiftActive || this.capslockActive)) {
+            this.inputValue = this.inputValue.concat(event.superKey);
+          } else {
+            this.inputValue = this.inputValue.concat(event.subKey);
+          }
         } else {
-          this.inputValue = this.inputValue.concat(event.subKey);
+          if (this.shiftActive) {
+            this.inputValue = this.inputValue.concat(event.superKey);
+          } else {
+            this.inputValue = this.inputValue.concat(event.subKey);
+          }
         }
       }
+
     }
     this.emitInputValue(INPUT_ACTIONS.INPUT);
   }
@@ -97,11 +105,19 @@ export class KeyboardContainerComponent implements OnInit {
   }
 
   addLineBreak() {
-    this.inputValue = this.inputValue.concat(`\n`);
+    if (this.notIsNumericField()) {
+      this.inputValue = this.inputValue.concat(`\n`);
+    }
+  }
+
+  notIsNumericField() {
+    return !this.isNumericField;
   }
 
   addSpace() {
-    this.inputValue = this.inputValue.concat(' ');
+    if (this.notIsNumericField()) {
+      this.inputValue = this.inputValue.concat(' ');
+    }
   }
 
   emitInputValue(action: string) {

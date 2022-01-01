@@ -1,4 +1,4 @@
-import {ComponentRef, Directive, ElementRef, HostListener, OnDestroy, ViewContainerRef} from '@angular/core';
+import {ComponentRef, Directive, ElementRef, HostListener, Input, OnDestroy, ViewContainerRef} from '@angular/core';
 import {KeyboardContainerComponent} from "../keyboard-container/keyboard-container.component";
 import {KeyboardService} from "../services/keyboard.service";
 import {INPUT_ACTIONS} from "../interfaces/keyboard";
@@ -8,14 +8,12 @@ import {Subscription} from "rxjs";
   selector: '[virtualKeyboard]'
 })
 export class KeyboardDirective implements OnDestroy {
+  @Input() numeric: boolean = false;
   keyboardRef: ComponentRef<KeyboardContainerComponent> | undefined;
   inputSubscription: Subscription | undefined;
 
   @HostListener('focus', ['$event']) onFocus(event: FocusEvent) {
     this.openVirtualKeyboard();
-  }
-
-  @HostListener('blur', ['$event']) onBlur(event: FocusEvent) {
   }
 
   constructor(private viewContainerRef: ViewContainerRef, private keyboardService: KeyboardService,
@@ -29,16 +27,26 @@ export class KeyboardDirective implements OnDestroy {
       if (this.elementRef.nativeElement.value) {
         this.keyboardRef.instance.inputValue = this.elementRef.nativeElement.value;
       }
+      if (this.isNumericField()) {
+        this.keyboardRef.instance.isNumericField = true;
+      }
       this.inputSubscription = this.keyboardService.getInput().subscribe((res: any) => {
         if (res.action === INPUT_ACTIONS.INPUT) {
           this.elementRef.nativeElement.value = res.data;
         } else if (res.action === INPUT_ACTIONS.CLOSE) {
+          if (this.isNumericField()) {
+            this.elementRef.nativeElement.value = +res.data;
+          }
           this.closeVirtualKeyboard();
         }
       })
     } else {
       this.closeVirtualKeyboard();
     }
+  }
+
+  isNumericField() {
+    return this.numeric;
   }
 
   closeVirtualKeyboard() {
