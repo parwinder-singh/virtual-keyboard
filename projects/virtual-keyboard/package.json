@@ -1,11 +1,24 @@
 {
   "name": "@ng/virtual-keyboard",
   "version": "0.0.1",
+  "description": "Virtual keyboard library for Angular",
   "peerDependencies": {
     "@angular/common": "^13.1.0",
     "@angular/core": "^13.1.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "keywords": ["angular", "virutal-keyboard", "keyboard", "on screen keyboard"],
+  "homepage": "https://github.com/parwinder-singh/virtual-keyboard",
+  "bugs": {
+    "url": "https://github.com/parwinder-singh/virtual-keyboard/issues"
+  },
+  "author": {
+    "name": "Parwinder Singh",
+    "url": "https://github.com/parwinder-singh"
+  },
+  "repository": {
+    "url": "https://github.com/parwinder-singh/virtual-keyboard"
   }
 }
