@@ -1,0 +1,55 @@
+.demo-wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+  .about {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: grey;
+    margin-top: 32px;
+    line-height: 24px;
+  }
+  .row {
+    margin: 32px 0;
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    .action {
+      display: flex;
+      align-items: center;
+      input[type='checkbox'] {
+        width: 18px;
+      }
+    }
+  }
+}
+.label {
+  width: 125px;
+}
+.toggler {
+  background: white;
+  border: 1px solid gainsboro;
+  padding: 4px;
+  height: 26px;
+  cursor: pointer;
+  border-radius: 4px;
+  &:hover {
+    background: gainsboro;
+  }
+}
+.text-center {
+  text-align: center;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.input-field {
+  padding: 4px;
+  outline: none;
+  font-size: 16px;
+}
+.breaker {
+  height: 1px;
+  width: 50%;
+  background: gainsboro;
+  margin: 32px auto;
+}

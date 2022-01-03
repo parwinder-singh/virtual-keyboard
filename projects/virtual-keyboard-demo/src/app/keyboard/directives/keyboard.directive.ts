@@ -51,7 +51,7 @@ export class KeyboardDirective implements OnDestroy {
     }
     if (!this.keyboardRef) {
       this.keyboardRef = this.viewContainerRef.createComponent(KeyboardContainerComponent);
-      this.elementRef.nativeElement.inputMode = 'none'; //  to prevent default keyboard from opening
+      this.elementRef.nativeElement.readOnly = 'true'; //  to prevent default keyboard from opening
       if (this.elementRef.nativeElement.value) {
         this.keyboardRef.instance.inputValue = this.elementRef.nativeElement.value;
       }
@@ -107,6 +107,7 @@ export class KeyboardDirective implements OnDestroy {
 
   closeVirtualKeyboard() {
     if (this.keyboardRef) {
+      this.elementRef.nativeElement.readOnly = false;
       this.viewContainerRef.clear();
       this.keyboardRef = undefined;
       this.inputSubscription?.unsubscribe();

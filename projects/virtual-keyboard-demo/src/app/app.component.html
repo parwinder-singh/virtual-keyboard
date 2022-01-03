@@ -1,3 +1,46 @@
-<h2>Working</h2>
-<input type="text" virtualKeyboard>
-<input type="text" [numeric]="true" virtualKeyboard>
+<div class="demo-wrapper">
+  <h2 class="text-center">Angular Virtual Keyboard Playground</h2>
+  <section class="about">
+    Welcome to the playground version of Angular Virtual Keyboard application where you can get hands on
+    experience on how this library looks like. This is the project which aims at
+    bringing accessibility to the users of your application. It is in the initial phase and might contains
+    unexpected bugs or uncovered scenarios. Please feel free to raise bug/merge requests for bugs or improvements
+    which come in your way. Thank you!
+  </section>
+  <div class="breaker"></div>
+  <div class="row">
+    <div class="action">
+      <label for="toggler" class="cursor-pointer">Enable virtual keyboard</label>
+      <input id="toggler" type="checkbox" class="toggler" [checked]="!isDisabled" (change)="isDisabled = !isDisabled">
+    </div>
+  </div>
+  <div class="row">
+    <div class="label">
+      <label for="for-text">Text field: </label>
+    </div>
+    <div class="field">
+      <input id="for-text" class="input-field" type="text" virtualKeyboard
+      [disableVirtualKeyboard]="isDisabled">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="label">
+      <label for="for-number">Number field: </label>
+    </div>
+    <div class="field">
+      <input id="for-number" class="input-field" type="number" [numeric]="true" virtualKeyboard
+             [disableVirtualKeyboard]="isDisabled">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="label">
+      <label for="for-area">Textarea: </label>
+    </div>
+    <div class="field">
+      <textarea id="for-area" class="input-field" virtualKeyboard
+                [disableVirtualKeyboard]="isDisabled"></textarea>
+    </div>
+  </div>
+</div>
