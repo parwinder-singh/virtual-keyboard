@@ -1,6 +1,6 @@
 {
-  "name": "@ng/virtual-keyboard",
-  "version": "0.0.1",
+  "name": "ngs-virtual-keyboard",
+  "version": "1.0.0",
   "description": "Virtual keyboard library for Angular",
   "peerDependencies": {
     "@angular/common": "^13.1.0",
@@ -9,6 +9,7 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
+  "private": false,
   "keywords": ["angular", "virutal-keyboard", "keyboard", "on screen keyboard"],
   "homepage": "https://github.com/parwinder-singh/virtual-keyboard",
   "bugs": {
