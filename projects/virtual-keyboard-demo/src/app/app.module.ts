@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import {KeyboardModule} from "./keyboard/keyboard.module";
 import {CommonModule} from "@angular/common";
+import {KeyboardModule} from "virtual-keyboard";
 
 @NgModule({
   declarations: [
