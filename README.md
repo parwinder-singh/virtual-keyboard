@@ -1,27 +1,91 @@
-# Angular Virtual Keyboard 
+# Angular Virtual Keyboard
+![](https://img.shields.io/badge/build-passing-green)
+![](https://img.shields.io/badge/dependencies-upto%20date-yellowgreen)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+![](https://raw.githubusercontent.com/parwinder-singh/virtual-keyboard/master/projects/virtual-keyboard-demo/src/assets/keyboard.png "Virtual Keyboard")
+<br><br>Simple on screen virtual keyboard for Angular projects.
 
-## Development server
+## Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Want to try out the demo before using it ? Not to worry, here is the link which you can use to play around.
+<br>
+[Dropwizard](http://www.google.com)
 
-## Code scaffolding
+### Installing
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Step-by-step guide on how to install and use this package.
 
-## Build
+```text
+1. Open terminal inside your project directory.
+```
+```text
+2. npm install @ng/virtual-keyboard
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This will take few seconds or minutes to install. Once done, inspect your package.json file to verify that package is installed
+correctly. You should see it as a dependencies as follow:
+```json
+{
+  "dependencies": {
+    ...
+    "@ng/virtual-keyboard": "<version>"
+  }
+}
+```
+If you are able to see this, that means, the package was installed correctly. You are all set!
 
-## Running unit tests
+## Usage Guide
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Minimal guide on how to use this package in your code. This library consist of single exposing
+directive, which you can use on your fields to extend its functionality.
 
-## Running end-to-end tests
+1. Open any HTML file and navigate to the input field you want to attach the keyboard
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Add _**virtualKeyboard**_ directive to the input field as shown below:
+```html
+<input type="text" virtualKeyboard>
+```
+3. Add KeyboardModule to the imports array of your module or to your root module (app.module.ts) as shown.
+```typescript
+@NgModule({
+  imports: [
+    KeyboardModule
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+4. Run `ng serve` and test on your browser at `localhost:4200`
 
-## Further help
+### Configurations
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Here are some configurations which you can use to change the keyboard behavior.<br>
+**Options**
+1. `numeric`
+   * **Type**: Boolean
+   * **Purpose**: Use on input type number fields and disable text typing
+    ```html
+     <input type="number" [numeric]="true" virtualKeyboard>
+   ```
+2. `disableVirtualKeyboard`
+   * **Type**: Boolean
+   * **Purpose**: To enable/disable and toggle between default and virtual keyboard
+    ```html
+     <input type="text" virtualKeyboard [disableVirtualKeyboard]="true">
+   ```
+
+**Events**
+1. `onClose`
+   * Event is fired when user click on close button to close the keyboard.
+2. `onKeyClick`
+   * Event is fired when user press any key using click or press
+   
+### Side note
+
+Author of this project is working on adding new enhancements and fixes to this project. It might contain some unexpected and
+uncovered scenarios, so please feel free to open issues for bugs and improvements.
+
+
+## Authors
+* **Parwinder Singh** - *Angular Developer*
+
