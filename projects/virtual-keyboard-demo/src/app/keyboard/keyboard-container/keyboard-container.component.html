@@ -1,4 +1,4 @@
-<div class="keyboard-wrapper">
+<div class="keyboard-wrapper" @slideKeyboard>
   <div class="typed-text" *ngIf="inputValue">{{inputValue}}</div>
   <div class="row" *ngFor="let row of keyboardLayout">
     <div class="button" *ngFor="let data of row | keyvalue: originalOrder" (click)="handleKeyClick(data.value)"

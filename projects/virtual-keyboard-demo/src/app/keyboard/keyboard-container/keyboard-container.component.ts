@@ -3,6 +3,7 @@ import {KeyboardService} from "../services/keyboard.service";
 import {EMIT_DATA, INPUT_ACTIONS} from "../interfaces/keyboard";
 import {KEYBOARD} from "../constants/keyboard";
 import {KEY_ACTIONS} from "../enums/keyboard-actions";
+import {animate, style, transition, trigger} from "@angular/animations";
 
 export interface KEY {
   subKey: string,
@@ -15,7 +16,19 @@ export interface KEY {
 @Component({
   selector: 'app-keyboard-container',
   templateUrl: './keyboard-container.component.html',
-  styleUrls: ['./keyboard-container.component.scss']
+  styleUrls: ['./keyboard-container.component.scss'],
+  animations: [
+    trigger('slideKeyboard', [
+      transition(':enter', [
+        style({
+          bottom: '-150px'
+        }),
+        animate('0.15s', style({
+          bottom: '*'
+        }))
+      ])
+    ])
+  ]
 })
 export class KeyboardContainerComponent implements OnInit {
   keyAction = KEY_ACTIONS;
