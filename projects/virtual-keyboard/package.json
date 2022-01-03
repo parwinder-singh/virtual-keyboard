@@ -20,5 +20,6 @@
   },
   "repository": {
     "url": "https://github.com/parwinder-singh/virtual-keyboard"
-  }
+  },
+  "license": "MIT"
 }
