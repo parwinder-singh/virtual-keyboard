@@ -84,3 +84,21 @@
   right: 0;
   z-index: 0;
 }
+@media screen and (max-width: 768px) and  (max-width: 960px) {
+  .keyboard-wrapper {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 375px) and  (max-width: 768px) {
+  .keyboard-wrapper {
+    width: 100%;
+    .row {
+      .button {
+        width: 22px;
+        height: 22px;
+        padding: 3px;
+        font-size: 10px;
+      }
+    }
+  }
+}

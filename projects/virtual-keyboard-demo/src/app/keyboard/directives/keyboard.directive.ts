@@ -51,6 +51,7 @@ export class KeyboardDirective implements OnDestroy {
     }
     if (!this.keyboardRef) {
       this.keyboardRef = this.viewContainerRef.createComponent(KeyboardContainerComponent);
+      this.elementRef.nativeElement.inputMode = 'none'; //  to prevent default keyboard from opening
       if (this.elementRef.nativeElement.value) {
         this.keyboardRef.instance.inputValue = this.elementRef.nativeElement.value;
       }
