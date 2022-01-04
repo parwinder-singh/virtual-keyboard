@@ -9,7 +9,7 @@
 
 Want to try out the demo before using it ? Not to worry, here is the link which you can use to play around.
 <br>
-[Dropwizard](http://www.google.com)
+[Click here for demo](https://parwinder-singh.github.io/virtual-keyboard/)
 
 ### Installing
 
@@ -62,10 +62,10 @@ export class AppModule { }
 Here are some configurations which you can use to change the keyboard behavior.<br>
 **Options**
 1. `numeric`
-  * **Type**: Boolean
-  * **Purpose**: Use on input type number fields and disable text typing
-    ```html
-     <input type="number" [numeric]="true" virtualKeyboard>
+* **Type**: Boolean
+* **Purpose**: Use on input type number fields and disable text typing
+  ```html
+   <input type="number" [numeric]="true" virtualKeyboard>
    ```
 2. `disableVirtualKeyboard`
   * **Type**: Boolean
@@ -76,9 +76,9 @@ Here are some configurations which you can use to change the keyboard behavior.<
 
 **Events**
 1. `onClose`
-  * Event is fired when user click on close button to close the keyboard.
+* Event is fired when user click on close button to close the keyboard.
 2. `onKeyClick`
-  * Event is fired when user press any key using click or press
+* Event is fired when user press any key using click or press
 
 ### Side note
 
