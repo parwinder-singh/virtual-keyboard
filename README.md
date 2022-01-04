@@ -62,24 +62,24 @@ export class AppModule { }
 Here are some configurations which you can use to change the keyboard behavior.<br>
 **Options**
 1. `numeric`
-   * **Type**: Boolean
-   * **Purpose**: Use on input type number fields and disable text typing
+  * **Type**: Boolean
+  * **Purpose**: Use on input type number fields and disable text typing
     ```html
      <input type="number" [numeric]="true" virtualKeyboard>
    ```
 2. `disableVirtualKeyboard`
-   * **Type**: Boolean
-   * **Purpose**: To enable/disable and toggle between default and virtual keyboard
+  * **Type**: Boolean
+  * **Purpose**: To enable/disable and toggle between default and virtual keyboard
     ```html
      <input type="text" virtualKeyboard [disableVirtualKeyboard]="true">
    ```
 
 **Events**
 1. `onClose`
-   * Event is fired when user click on close button to close the keyboard.
+  * Event is fired when user click on close button to close the keyboard.
 2. `onKeyClick`
-   * Event is fired when user press any key using click or press
-   
+  * Event is fired when user press any key using click or press
+
 ### Side note
 
 Author of this project is working on adding new enhancements and fixes to this project. It might contain some unexpected and
@@ -88,4 +88,3 @@ uncovered scenarios, so please feel free to open issues for bugs and improvement
 
 ## Authors
 * **Parwinder Singh** - *Front-end Developer*
-

@@ -88,4 +88,3 @@ uncovered scenarios, so please feel free to open issues for bugs and improvement
 
 ## Authors
 * **Parwinder Singh** - *Front-end Developer*
-
