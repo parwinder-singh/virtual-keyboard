@@ -19,7 +19,7 @@ Step-by-step guide on how to install and use this package.
 1. Open terminal inside your project directory.
 ```
 ```text
-2. npm install @ng/virtual-keyboard
+2. npm i ngs-virtual-keyboard
 ```
 
 This will take few seconds or minutes to install. Once done, inspect your package.json file to verify that package is installed
@@ -28,7 +28,7 @@ correctly. You should see it as a dependencies as follow:
 {
   "dependencies": {
     ...
-    "@ng/virtual-keyboard": "<version>"
+    "ngs-virtual-keyboard": "<version>"
   }
 }
 ```
@@ -59,26 +59,27 @@ export class AppModule { }
 
 ### Configurations
 
-Here are some configurations which you can use to change the keyboard behavior.<br>
+Here are some configurations which you can use to change the keyboard behavior.
+<br>
 **Options**
 1. `numeric`
-  * **Type**: Boolean
-  * **Purpose**: Use on input type number fields and disable text typing
-    ```html
-     <input type="number" [numeric]="true" virtualKeyboard>
+* **Type**: Boolean
+* **Purpose**: Use on input type number fields and disable text typing
+  ```html
+   <input type="number" [numeric]="true" virtualKeyboard>
    ```
 2. `disableVirtualKeyboard`
-  * **Type**: Boolean
-  * **Purpose**: To enable/disable and toggle between default and virtual keyboard
-    ```html
+* **Type**: Boolean
+* **Purpose**: To enable/disable and toggle between default and virtual keyboard
+```html
      <input type="text" virtualKeyboard [disableVirtualKeyboard]="true">
-   ```
+```
 
 **Events**
 1. `onClose`
-  * Event is fired when user click on close button to close the keyboard.
+* Event is fired when user click on close button to close the keyboard.
 2. `onKeyClick`
-  * Event is fired when user press any key using click or press
+* Event is fired when user press any key using click or press
 
 ### Side note
 
