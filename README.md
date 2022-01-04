@@ -59,7 +59,8 @@ export class AppModule { }
 
 ### Configurations
 
-Here are some configurations which you can use to change the keyboard behavior.<br>
+Here are some configurations which you can use to change the keyboard behavior.
+<br>
 **Options**
 1. `numeric`
 * **Type**: Boolean
@@ -70,9 +71,9 @@ Here are some configurations which you can use to change the keyboard behavior.<
 2. `disableVirtualKeyboard`
   * **Type**: Boolean
   * **Purpose**: To enable/disable and toggle between default and virtual keyboard
-    ```html
+```html
      <input type="text" virtualKeyboard [disableVirtualKeyboard]="true">
-   ```
+```
 
 **Events**
 1. `onClose`
