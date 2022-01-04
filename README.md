@@ -19,7 +19,7 @@ Step-by-step guide on how to install and use this package.
 1. Open terminal inside your project directory.
 ```
 ```text
-2. npm install @ng/virtual-keyboard
+2. npm i ngs-virtual-keyboard
 ```
 
 This will take few seconds or minutes to install. Once done, inspect your package.json file to verify that package is installed
@@ -28,7 +28,7 @@ correctly. You should see it as a dependencies as follow:
 {
   "dependencies": {
     ...
-    "@ng/virtual-keyboard": "<version>"
+    "ngs-virtual-keyboard": "<version>"
   }
 }
 ```
