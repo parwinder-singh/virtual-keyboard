@@ -9,7 +9,7 @@
 
 Want to try out the demo before using it ? Not to worry, here is the link which you can use to play around.
 <br>
-[Dropwizard](http://www.google.com)
+[Click here to view demo](https://parwinder-singh.github.io/virtual-keyboard/)
 
 ### Installing
 
